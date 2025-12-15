@@ -1,0 +1,20 @@
+Basic Java assignment
+
+1. How Java differs from other programming language like C?
+Java and C are different in many ways, C is a Procedural language Focuses on functions and step by step instructions, While java is object oriented like class and object based.
+Java runs on JVM, is platform independent, has automatic memory management, and is more secure compared to C.
+C runs directly on the machine and needs manual memory handling
+
+2.How to check the version of java in command prompt?
+Open command prompt, type: java -version and press enter.then its shows the installed version
+
+3.If i write a java program in Linux OS, is it possible to run in Windows OS? possible means why it is possible?
+Yes, it is possible to run a Java program on windows because Java programs are compiled into bytecode, which runs inside the JVM, JVM is available for different operating systems like Linux and Windows, 
+the same Java program can run on any system. this feature is called Write Once, Runs Anywhere
+
+4.Why we are using Selenium with Java instead of other combination like Selenium + Ruby or Selenium+ Python?
+Selenium can work with python and ruby , but java preferred because it is stable, widely used and has strong oop support.
+Most companies already use Java,so selenium + Java is industry standard
+
+
+
