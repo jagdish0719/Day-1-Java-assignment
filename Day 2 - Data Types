@@ -1,0 +1,26 @@
+DataTypes Assignment
+
+
+1. What are Primitive and Non-Primitive Datatypes?
+
+Primitive Datatypes:
+Primitive datatypes are basic, built-in datatypes in Java
+They store single, simple values directly in memory
+Examples: boolean, byte , int , short , long , float , double , char
+
+Non-Primitive Datatypes:
+Non-primitive datatypes are user-defined or reference types.
+They store references (addresses) of objects, not actual values.
+Examples: String, Arrays, Classes, Interfaces
+
+
+
+2. I have a number 500 which needs to be stored in a variable. Which datatype you need to choose and why?
+
+datatype = int
+
+Because,
+
+500 is a whole number (no decimal value)
+int can store numbers from -2,147,483,648 to 2,147,483,647.
+It is the most commonly used integer datatype in Java
