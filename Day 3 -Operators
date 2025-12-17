@@ -1,0 +1,62 @@
+Operators Assignment
+
+1. Find a number is Odd or Even using Ternary and Arithmetic Operators
+
+package com.J;
+
+
+public class trail {
+
+    public static void main(String[] args) {
+
+        int a = 2;
+
+        String find = (a % 2 == 0) ? "Even" : "Odd";
+
+        System.out.println("It is an " + find + " number");
+        
+        
+    }
+}
+
+Output :
+It is an Even number
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+2. Write program using Logical Operators
+
+package com.J;
+
+import java.util.Scanner;
+
+public class Sample {
+
+	public static void main(String[] args) {
+		
+	  Scanner rock = new Scanner(System.in);
+	  
+	  System.out.println("is vishnu passed the exam ?");
+	  
+	  System.out.println("Enter the true or false:");
+	  
+	  boolean result = rock.nextBoolean();
+	  
+	  
+	  System.out.println("Result: " + !result);
+	  
+	  rock.close();
+		
+
+	}
+
+}
+
+Output : 
+
+is vishnu passed the exam ?
+Enter the true or false:
+false
+Result: true
