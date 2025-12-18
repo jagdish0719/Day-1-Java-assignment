@@ -1,0 +1,137 @@
+Task:
+1. Use if-else to find the greatest of 3 numbers ( a=10,b=23,c=5)
+
+public class PracticeSession {
+
+	public static void main(String[] args) {
+		
+		int a=10;
+		int b=23;
+		int c=5;
+		
+		if (a>b && a>c) {
+			System.out.println("10 is the greatest number");
+		}
+		else if(b>a && b>c) {
+			System.out.println("23 is the greatest number");
+
+		}
+		else if(c>a && c>b) {
+			System.out.println("5 is the greatest number");
+
+		}
+	}
+
+}
+
+Output: 23 is the greatest number
+
+--------------------------------------------------------------------------------------------------------------------------
+
+2. Implement a Calculator using Switch statement
+
+public class Switchcase {
+
+    public static void main(String[] args) {
+    	
+    	int a = 7;
+    	int b = 19;
+    	
+    	char operator = '+';
+    	
+    	switch(operator) {
+    	
+    	case  '+':
+    		System.out.println("addition:"+(a+b));
+    		break;
+    		
+    	case '-':
+    		System.out.println("subraction:"+(a-b));
+    		break;
+    		
+    	case '*':
+    		System.out.println("multiplication:"+(a*b));
+    		break;
+    		
+    	case '/':
+    		System.out.println("division:"+(a/b));
+    		break;
+    		
+    		default:
+        		System.out.println("invalid operator"); 
+
+
+
+    	}
+
+    }
+}
+Output : addition:26
+
+--------------------------------------------------------------------------------------------------------------------------
+
+3. Print only even numbers between 1 to 20 using for loop
+
+public class Loop {
+
+	public static void main(String[] args) {
+
+		for (int i=1; i<20; i++) {
+			
+			if(i%2==0)
+			System.out.println(i);
+			
+		}
+	}
+
+}
+
+Output: 
+2
+4
+6
+8
+10
+12
+14
+16
+18
+
+-------------------------------------------------------------------------------------------------------------------------
+
+4. Print multiplication table of 7 using while loop
+
+i dont know...
+
+-------------------------------------------------------------------------------------------------------------------------
+
+5. Print only odd numbers using continue statement in a loop
+
+
+public class Oddnum {
+
+	public static void main(String[] args) {
+
+		for (int i=1; i<=20; i++) {
+			
+			if( i%2 !=0 ) 
+			System.out.println(i);
+		}
+	}
+
+}
+
+Output:
+1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+
+
+
