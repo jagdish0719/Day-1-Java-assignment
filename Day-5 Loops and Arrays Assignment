@@ -1,0 +1,79 @@
+Loops and Arrays Assignment
+
+1. Write a program to create String array and print all the values in that array.
+
+public class StringArray {
+
+	public static void main(String[] args) {
+
+
+		String[] languages= {"C++","html","java","python"};
+		
+		for(String lan:languages) {
+			System.out.println("Languages:"+lan);
+		}
+		
+	}
+
+}
+
+Output :
+Languages:C++
+Languages:html
+Languages:java
+Languages:python
+
+---------------------------------------------------------------------------------------------------------
+
+2. Write a sample program for while loop and do-while loop.
+
+public class While_DoWhile {
+
+	public static void main(String[] args) {
+
+		int i=1;
+		
+		while(i<=5) {
+			
+			System.out.println(i);
+			i++;
+		}
+	}
+
+}
+Output: 
+1
+2
+3
+4
+5
+
+
+------------------
+
+public class While_DoWhile {
+
+	public static void main(String[] args) {
+
+		int i=1;
+		
+		do {
+			
+			System.out.println(i);
+			i++;
+			
+		} while (i<=5);
+	}
+
+}
+Output: 
+1
+2
+3
+4
+5
+
+
+
+
+
