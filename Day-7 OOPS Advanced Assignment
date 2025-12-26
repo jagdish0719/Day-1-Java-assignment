@@ -1,0 +1,100 @@
+OOPS Advanced Assignment
+
+
+1. Write a sample program for method overloading.
+
+class Calculator {
+
+    
+    void add(int a, int b) {
+
+        int result;
+        result = a + b;
+
+        System.out.println("Sum of two numbers: " + result);
+    }
+
+    
+    void add(int a, int b, int c) {
+
+        int result;
+        result = a + b + c;
+
+        System.out.println("Sum of three numbers: " + result);
+    }
+
+    
+    void add(double a, double b) {
+
+        double result;
+        result = a + b;
+
+        System.out.println("Sum of decimal numbers: " + result);
+    }
+
+    public static void main(String[] args) {
+
+        Calculator calc = new Calculator();
+
+        
+        calc.add(10, 20);
+        calc.add(10, 20, 30);
+        calc.add(5.5, 4.5);
+    }
+}
+Output:
+
+Sum of two numbers: 30
+Sum of three numbers: 60
+Sum of decimal numbers: 10.0
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Create a program with Parent class as Person and 2 child class Student,Employee. The Person class should have method Studying(), Working(). Inherit the child classes as per the appropriate methods.
+
+
+class Person {
+	void studing() {
+		System.out.println("Person is studing");
+	}
+	
+	void working() {
+		System.out.println("Person is working");
+	}
+	
+}
+
+class Student extends Person {
+	void studentDetails() {
+		System.out.println("This person is student");
+	}
+}
+
+class Employee extends Person {
+	void employeeDetails() {
+		System.out.println("This person is an employee");
+	}
+}
+
+public class InheritanceAssing {
+
+	public static void main(String[] args) {
+
+		Student std = new Student();
+		std.studentDetails();
+		std.studing();
+		
+		Employee emp = new Employee();
+		emp.employeeDetails();
+		emp.working();
+	}
+
+}
+
+Output :
+
+This person is student
+Person is studing
+This person is an employee
+Person is working
+
