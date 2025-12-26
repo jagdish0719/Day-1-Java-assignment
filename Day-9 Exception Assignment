@@ -1,0 +1,66 @@
+Exception Assignment
+
+1. Write a program for List to store list of floating values and fetch all the values.
+
+import java.util.ArrayList;
+
+import java.util.List;
+
+
+public class ListFloat {
+
+	public static void main(String[] args) {
+		
+		List<Float> fl  = new ArrayList<>();
+		fl.add(10.5f);
+		fl.add(20.4f);
+		fl.add(17.8f);
+		fl.add(22.20f);
+		fl.add(72.12f);
+		
+		System.out.println("Floating values in the list : ");
+		
+		for(Float element: fl)   {
+			System.out.println(element);
+			
+		}
+		
+
+		
+	}
+
+}
+Output : 
+Floating values in the list : 
+10.5
+20.4
+17.8
+22.2
+72.12
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a sample program to handle exceptions.
+
+public class Except {
+
+	public static void main(String[] args) {
+
+		try {
+			int a =17;
+			int b =a/0;
+			System.out.println(b);
+			
+		}catch(Exception ae){
+			System.out.println("After exception handling");
+			
+		} finally{
+			int c =17-20;
+			System.out.println("From finally block:"+ c);
+		}
+	}
+
+}
+Output : 
+After exception handling
+From finally block:-3
