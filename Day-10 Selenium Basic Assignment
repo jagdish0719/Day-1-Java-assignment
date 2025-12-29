@@ -1,0 +1,42 @@
+Selenium Basic Assignment 
+
+1. When will you go for Automation Testing?
+We go for Automation Testing when the same test cases have to be run repeatedly, especially for regression testing. It is useful when the application is stable, 
+needs testing on multiple browsers, and when we want faster and more accurate results while saving time in the long run
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. What is the difference between driver.close() and driver.quit()?
+driver.close() closes the current browser window that is being controlled by Selenium. If only one window is open, the browser will close
+driver.quit() closes all browser windows opened by Selenium and ends the WebDriver session completely
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.What is the advantage for assigning driver reference in WebDriver interface?
+By using WebDriver driver = new ChromeDriver();, we can easily switch between different browsers (Chrome, Firefox, Edge, etc.) 
+by changing only the object creation line, without changing the rest of the code. It also follows polymorphism, making the code more reusable and maintainable
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4.Write a program to Open a website in a browser other than Chrome Driver
+
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.WebDriver;
+
+
+public class SeleniumPractice {
+
+	public static void main(String[] args) {
+		
+
+		WebDriver driver  = new EdgeDriver();
+		
+		driver.get("https://www.facebook.com/login.php/");    
+		
+		driver.close();  
+		
+			
+	}
+
+}
+
