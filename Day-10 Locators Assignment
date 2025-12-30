@@ -1,0 +1,21 @@
+Locators Assignment
+
+1. Navigate to https://www.hyrtutorials.com/p/css-selectors-practice.html and write xpath and cssselector for textfield and buttons.
+
+//Xpath
+//input[@id='firstName']
+
+//input[@value='Buttton1']  - Button 1
+
+-----------------------------------------------------
+
+
+//Css
+input[type='submit']  - Button 2
+
+input[id='lastName']
+
+
+
+
+
