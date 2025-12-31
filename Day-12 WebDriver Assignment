@@ -1,0 +1,99 @@
+WebDriver Assignment
+
+1. Difference between driver.get() and driver.navigate() commands
+
+* driver.get() is used to open a web page directly by giving the URL.
+It is like pasting a URL in the browser and pressing Enter. It loads the page fresh
+
+*driver.navigate() is used when we want to move between pages after already opening a site.
+It supports actions like back, forward, refresh, and also navigating to another URL
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write a program to check if the website landed successfully using title of that website. Write a logic to display PASS or FAIL based on title.
+
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+
+public class Facebook {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new EdgeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.facebook.com/login.php/");
+		
+		
+		Thread.sleep(3000);
+		
+		
+		String title = driver.getTitle();
+		
+		System.out.println("The Title of website is: "+title);
+		
+		if(title.equals("Log in to Facebook")) {
+			System.out.println("Pass");
+		} else {
+			System.out.println("Fail");
+		}
+		
+		driver.close();
+
+		
+	}
+
+}
+Output :
+The Title of website is: Log in to Facebook
+Pass
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. Write a program to check whether page https://www.demoblaze.com/ contains "Nexus 6" based on pagesource.
+
+package selepractice;
+
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+
+public class Facebook {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.demoblaze.com/");
+		
+		Thread.sleep(3000);
+		
+		String pageSource = driver.getPageSource();
+		System.out.println(pageSource);
+		
+		if(pageSource.contains("Nexus 6")) {
+			System.out.println("Pass -Nexus 6 is present");
+		} else {
+			System.out.println("Fail - Nexus 6 is not present");
+		}
+		
+		driver.close();
+		
+	}
+
+}
+
+Output : 
+
+</body></html>
+Pass -Nexus 6 is present
+
+
+
