@@ -1,0 +1,23 @@
+WebElement Assignment
+
+1. What method is used to input text in the text field? 
+
+sendKeys() – This method is used to enter text into a text field
+
+eg: WebElement username = driver.findElement(By.id("username"));
+username.sendKeys("jagdish");
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Write selenium statement to findelement in a page using cssselector,id,name etc.,
+
+driver.get("https://www.facebook.com/login/");
+		
+		WebElement username = driver.findElement(By.id("email"));
+		username.sendKeys("Jagdish");
+		
+		WebElement password = driver.findElement(By.name("pass"));
+		password.sendKeys("12345");
+		
+		WebElement button = driver.findElement(By.cssSelector("button[type='submit']"));
+		button.click();
