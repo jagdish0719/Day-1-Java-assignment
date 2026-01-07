@@ -1,0 +1,90 @@
+Alert&Window Handling Assignment
+1. Write a program to handle prompt alert in the given website https://www.tutorialspoint.com/selenium/practice/alerts.php
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PromptAlert {
+
+	public static void main(String[] args) throws InterruptedException {
+
+
+		WebDriver LaunchWeb = new ChromeDriver();
+		
+		String website = "https://www.tutorialspoint.com/selenium/practice/alerts.php";
+		
+		LaunchWeb.get(website);
+		
+		LaunchWeb.manage().window().maximize();
+		
+		WebElement button = LaunchWeb.findElement(By.cssSelector("[onclick='myPromp()']"));
+		button.click();
+		
+		
+		Alert popup = LaunchWeb.switchTo().alert();
+		
+		popup.sendKeys("Hello World");
+		
+		Thread.sleep(3000);
+		
+		popup.accept();
+		
+		Thread.sleep(2000);
+		
+		LaunchWeb.close();
+		
+		
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Write a program to handle the child window (After clicking the button1) in https://www.hyrtutorials.com/p/window-handles-practice.html
+    Print the Title of the child window page.
+
+import java.util.Set;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+
+
+		WebDriver lw = new ChromeDriver();
+		
+		String website = "https://www.hyrtutorials.com/p/window-handles-practice.html";
+				
+		lw.manage().window().maximize();
+		
+		lw.get(website);
+
+		String Parenthandle = lw.getWindowHandle();
+		
+		WebElement clickbutton = lw.findElement(By.id("newWindowBtn"));
+		clickbutton.click();
+		
+		Set<String> handles = lw.getWindowHandles();
+		
+		for(String handle:handles) {
+			if(!handle.equals(Parenthandle)) {
+			lw.switchTo().window(handle);
+			lw.manage().window().maximize();
+		}
+		}
+		
+		String title = lw.getTitle();
+		System.out.println("Child window page:"+title);
+		
+		lw.quit();
+		
+	}
+
+}
+
