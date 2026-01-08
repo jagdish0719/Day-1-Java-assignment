@@ -1,0 +1,49 @@
+Handling Tables Assignment
+Navigate to https://practice.expandtesting.com/dynamic-table and read the web table and print values
+
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+
+  
+		WebDriver driver = new ChromeDriver();
+		
+		driver.manage().window().maximize();
+		
+		String website = " https://practice.expandtesting.com/dynamic-table";
+		
+		driver.get(website);
+		
+		WebElement table = driver.findElement(By.tagName("table"));
+		List<WebElement> rows = table.findElements(By.tagName("tr"));
+		
+		for (WebElement row:rows) {
+			
+			List<WebElement> data = row.findElements(By.tagName("td"));
+			
+			
+			
+			for (WebElement datum:data) {
+				System.out.print(datum.getText()+" | ");
+			}
+			
+			System.out.println();
+			
+		}
+		
+		
+		driver.close();
+		
+		
+	}
+
+}
