@@ -47,3 +47,9 @@ public class Reuse {
 	}
 
 }
+Output:
+
+Firefox | 3.4 Mbps | 94.3 MB | 9% | 0.5 MB/s | 
+System | 5.5 Mbps | 98.2 MB | 2.3% | 0.7 MB/s | 
+Chrome | 6.4 Mbps | 63.3 MB | 9.8% | 0.8 MB/s | 
+Internet Explorer | 0.9 Mbps | 26.1 MB | 5% | 0.9 MB/s | 
