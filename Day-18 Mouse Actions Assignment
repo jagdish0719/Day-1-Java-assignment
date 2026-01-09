@@ -1,0 +1,71 @@
+Mouse Actions Assignment
+1. Navigate to https://www.hyrtutorials.com/p/html-dropdown-elements-practice.html
+Mouse hover on "Tutorials" and select "Java"
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		String website ="https://www.hyrtutorials.com/p/html-dropdown-elements-practice.html";
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(website);
+		
+		Actions act = new Actions(driver);
+		
+		WebElement mouseHover = driver.findElement(By.xpath("(//a[text()='Tutorials'])[1]"));
+		act.moveToElement(mouseHover).perform();
+		
+		WebElement clickJava = driver.findElement(By.xpath("(//a[text()='Java'])[1]"));
+		act.click(clickJava).perform();
+		
+		driver.close();
+		
+	}
+}
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Navigate to https://www.qa-practice.com/elements/dragndrop/images
+Drag n Drop the  yellow smiley face
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		String url ="https://www.qa-practice.com/elements/dragndrop/images";
+		
+		WebDriver driver = new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
+		
+		Actions action = new Actions(driver);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		
+		WebElement drag = driver.findElement(By.id("rect-droppable1"));
+		WebElement drop = driver.findElement(By.id("rect-droppable2"));
+		action.dragAndDrop(drag, drop).perform();
+
+		js.executeScript("window.scrollBy(0,500)");
+		
+		System.out.println("Smiley face dragged successfully");
+		driver.quit();
+		
+		
+	}
+}
+	
