@@ -1,0 +1,111 @@
+Keyboard Actions Assignment
+1. What are the different sendKeys available in Actions class and how it differ from normal element.sendKeys()?
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		String AccessLink ="https://www.qa-practice.com/elements/input/email";
+	
+		// Launch browser and open email input page
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(AccessLink);
+		
+		Actions actions = new Actions(driver);
+		
+		// Using Actions.sendKeys(WebElement, String)
+        // Sends keys to a specific element (advanced keyboard action)
+		WebElement emailField = driver.findElement(By.id("id_email"));
+		actions.sendKeys(emailField,"Ajithkumar1@gmail.com").perform();
+		
+		// Navigate to password page
+		driver.navigate().to("https://www.qa-practice.com/elements/input/passwd");
+		
+		// Using click().sendKeys()
+        // First clicks the element, then sends keys
+		WebElement passwordField = driver.findElement(By.id("id_password"));
+		actions.click(passwordField).sendKeys("PodaPodi").perform();
+		
+    Thread.sleep(2000);  // Wait for 2 seconds to see the password being entered
+
+		driver.close();  // Close the browser
+}
+	
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. How can we dragAndDrop without specifying the target element?
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		String website ="https://www.qa-practice.com/elements/dragndrop/boxes";
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(website);
+		
+		Actions actions = new Actions(driver);
+		WebElement dragBox = driver.findElement(By.id("rect-draggable"));
+		actions.dragAndDropBy(dragBox, 0, -190).perform();
+
+    Thread.sleep(2000); 
+
+    driver.close();
+
+	
+}
+	
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3. What are the other way to drag and drop an element without using inbuilt method
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class Reuse {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		String WebAddress ="https://www.qa-practice.com/elements/dragndrop/images";
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(WebAddress);
+		
+		Actions actions = new Actions(driver);
+		WebElement drag = driver.findElement(By.id("rect-droppable1"));
+		actions.clickAndHold(drag).moveByOffset(0, 200).release().perform();
+		
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,200)");
+		
+		Thread.sleep(2000);
+		
+		driver.close();
+		
+}
+	
+}
