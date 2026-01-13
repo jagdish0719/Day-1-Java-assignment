@@ -1,0 +1,93 @@
+Screenshots Assignment
+1. Navigate to https://www.qa-practice.com/elements/alert/ and then click the "click" button, Take screenshot with alert popup
+
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ReUse {
+
+	public static void main(String[] args) throws IOException {
+		
+		String path ="C:\\Users\\Jagdish selvaraj\\eclipse-workspace\\yuvan\\ScreeenshotSaver\\alert.png";
+
+		String WebAddress ="https://www.qa-practice.com/elements/alert/alert";
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(WebAddress);
+		
+		WebElement clickBtn = driver.findElement(By.xpath("//a[text()='Click']"));
+		clickBtn.click();
+		
+		Alert alert = driver.switchTo().alert();
+		System.out.println("Alert text: " + alert.getText());
+		alert.accept();
+		
+		TakesScreenshot ts = (TakesScreenshot) driver;
+		File temp = ts.getScreenshotAs(OutputType.FILE);
+		File dest = new File(path);
+		FileUtils.copyFile(temp, dest);
+		
+	
+		driver.close();
+		
+	}
+
+}
+
+Explanation:
+
+After clicking the button, a JavaScript alert popup appears.
+Selenium WebDriver cannot capture screenshots while an alert is open because alerts are browser-level dialogs and block WebDriver commands.
+Therefore, the alert is handled first using switchTo().alert().accept(), and the screenshot is taken after closing the alert.
+Capturing alert popups is not supported directly in Selenium and requires OS-level tools.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. Navigate to https://www.qa-practice.com/elements/textarea/textareas and then type some message in "First chapter" textbox
+     Paste the same in "second chapter" textbox using keyactions.
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class ReUse {
+
+	public static void main(String[] args) throws InterruptedException  {
+		
+		String WebAddress ="https://www.qa-practice.com/elements/textarea/textareas";
+
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(WebAddress);
+		
+	
+		Actions KeyAction = new Actions(driver);
+		WebElement FirstChapter = driver.findElement(By.cssSelector("[id='id_first_chapter']"));
+		WebElement SecondChapter = driver.findElement(By.cssSelector("[id='id_second_chapter']"));
+		KeyAction.sendKeys(FirstChapter,"hello Universe").perform();
+		
+		
+		KeyAction.keyDown(Keys.CONTROL).sendKeys("a").keyUp(Keys.CONTROL).perform();
+		KeyAction.keyDown(Keys.CONTROL).sendKeys("c").keyUp(Keys.CONTROL).perform();
+		KeyAction.click(SecondChapter).keyDown(Keys.CONTROL).sendKeys("v").keyUp(Keys.CONTROL).perform();
+		
+		Thread.sleep(3000);
+		
+		driver.close();
+		
+	}
+
+}
+
